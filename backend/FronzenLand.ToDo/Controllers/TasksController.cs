@@ -42,5 +42,19 @@ namespace FronzenLand.ToDo.Controllers
 			// Replace by an appropiate Http Code Status
 			return new BadRequestObjectResult(result.Error);
 		}
+
+		[HttpPut]
+		[Route("toggle-task-status")]
+		public async Task<ActionResult<TaskItemResponse>> ToggleTaskStatus(ToggleTaskStatusRequest request)
+		{
+			var result = await _mediator.Send(request.ToCommand());
+
+			if (result.IsSuccess) return result.Value;
+
+			// Replace by an appropiate Http Code Status
+			return new BadRequestObjectResult(result.Error);
+		}
+
+		
 	}
 }
