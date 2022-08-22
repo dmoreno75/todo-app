@@ -14,7 +14,8 @@ module.exports = {
         primary: '#0E1D50',
         background: '#D8DCE9'
       },
-      white:  '#FFFFFF'
+      white:  '#FFFFFF',
+      red: '#b91c1c'
     }
   },
   variants: {

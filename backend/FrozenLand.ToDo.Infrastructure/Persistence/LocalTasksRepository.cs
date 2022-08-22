@@ -9,10 +9,6 @@ namespace FrozenLand.ToDo.Infrastructure
 
 		public LocalTasksRepository()
 		{
-			_tasks.Add(new CoreModels.Task("8ACE3216-C1C5-4D1F-A377-85183F9A2C26", DateTime.Now, false, "Lorem ipsum"));
-			_tasks.Add(new CoreModels.Task(Guid.NewGuid().ToString(), DateTime.Now, true, "Lorem ipsum"));
-			_tasks.Add(new CoreModels.Task(Guid.NewGuid().ToString(), DateTime.Now, true, "Lorem ipsum"));
-			_tasks.Add(new CoreModels.Task(Guid.NewGuid().ToString(), DateTime.Now, false, "Lorem ipsum"));
 		}
 
 		public async Task<Result<IList<CoreModels.Task>>> GetAll()

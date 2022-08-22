@@ -59,3 +59,7 @@ p {
 button {
   @apply bg-blue-primary text-white p-1 rounded
 }
+
+.task-list a {
+  @apply text-blue-primary font-bold border-0 mr-2 cursor-pointer hover:text-red hover:scale-110
+}
