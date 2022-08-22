@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+h1 {
+	font-size: 36px;
+	@apply text-blue-primary font-black;
+}
+
+h2 {
+	font-size: 3em;
+	@apply text-blue-primary font-black;
+}
+
+ul {
+	@apply text-blue-primary font-bold;
+}
+
+p {
+	font-size: 1em;
+	@apply text-blue-primary font-medium;
+}
+
+.content p {
+	@apply my-4;
+}
+
+@variants hover {
+	.menu-hover {
+		@apply text-white;
+	}
+}
+
+.menu-entry {
+	@apply text-blue-primary py-3 px-6;
+}
+
+.menu ul li {
+	@apply hover:menu-hover menu-entry cursor-pointer;
+}
+
+.menu ul .active {
+	@apply text-white bg-blue-primary py-3 px-6 rounded;
+}
+
+.menu-mobile ul li {
+	@apply hover:menu-hover px-4 mr-8 my-2;
+}
+
+.menu-mobile ul .active {
+	@apply text-white bg-blue-primary rounded-full py-2;
+}
