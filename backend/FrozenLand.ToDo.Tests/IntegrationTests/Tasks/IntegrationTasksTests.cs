@@ -17,7 +17,7 @@ namespace FrozenLand.ToDo.Tests
             var client = _api.CreateClient();
             var result = await client.GetAsync("tasks");
 
-            Assert.Equals(HttpStatusCode.OK, result.StatusCode);
+            Assert.That(result.StatusCode, Is.EqualTo(HttpStatusCode.OK));
         }
     }
 }

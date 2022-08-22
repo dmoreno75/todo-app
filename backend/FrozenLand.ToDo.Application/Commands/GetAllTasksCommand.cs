@@ -4,7 +4,7 @@ using MediatR;
 
 namespace FrozenLand.ToDo.Application
 {
-    public class GetAllTasksCommand: IRequest<Result<IList<TaskResponse>>>
+    public class GetAllTasksCommand: IRequest<Result<TaskListResponse>>
     {
         public GetAllTasksCommand()
         {

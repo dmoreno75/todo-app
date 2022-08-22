@@ -7,26 +7,27 @@ using CoreModels = FrozenLand.ToDo.Core.Models;
 
 namespace FrozenLand.ToDo.Application
 {
-	public class GetAllTasksCommandHandler : IRequestHandler<GetAllTasksCommand, Result<IList<TaskResponse>>>
+	public class GetAllTasksCommandHandler : IRequestHandler<GetAllTasksCommand, Result<TaskListResponse>>
 	{
 		private readonly ITasksRepository _tasks;
-		private readonly Func<IList<CoreModels.Task>, IList<TaskResponse>>
-			_mapList = model => model
-				.Select(x => x.ToResponse())
-				.ToList();
+		private readonly Func<IList<CoreModels.Task>, TaskListResponse>
+			_mapList = model => new TaskListResponse(
+					model.Where(x => !x.Completed).Select(y => y.ToResponse()).ToArray(),
+					model.Where(x => x.Completed).Select(y => y.ToResponse()).ToArray()
+			);
 
 		public GetAllTasksCommandHandler(ITasksRepository tasks)
 		{
 			_tasks = tasks;
 		}
 
-		public async Task<Result<IList<TaskResponse>>> Handle(GetAllTasksCommand request, CancellationToken cancellationToken)
+		public async Task<Result<TaskListResponse>> Handle(GetAllTasksCommand request, CancellationToken cancellationToken = default)
 		{
 			var result = await _tasks.GetAll();
 
 			if (result.IsSuccess) return Result.Success(_mapList(result.Value));
 
-			throw new Exception("");
+			throw new Exception("TODO Deal with this scenario");
 		}
 	}
 }

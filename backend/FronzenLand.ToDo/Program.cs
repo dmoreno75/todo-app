@@ -15,8 +15,6 @@ builder.Services.AddCustomApplicationServices();
 
 var app = builder.Build();
 
-
-
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -30,6 +28,11 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+app.UseCors(x => x
+			.AllowAnyMethod()
+			.AllowAnyHeader()
+			.AllowCredentials()
+			.SetIsOriginAllowed(origin => true));
 
 app.Run();
 

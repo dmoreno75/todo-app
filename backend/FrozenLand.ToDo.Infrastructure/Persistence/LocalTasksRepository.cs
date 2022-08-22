@@ -9,11 +9,6 @@ namespace FrozenLand.ToDo.Infrastructure
 
 		public LocalTasksRepository()
 		{
-
-		}
-		public Task<Result<IList<CoreModels.Task>>> Get(Func<CoreModels.Task, bool> specification)
-		{
-			throw new NotImplementedException();
 		}
 
 		public async Task<Result<IList<CoreModels.Task>>> GetAll()

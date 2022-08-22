@@ -20,7 +20,7 @@ namespace FronzenLand.ToDo.Controllers
 		}
 
 		[HttpGet]
-		public async Task<IEnumerable<TaskResponse>> Get()
+		public async Task<TaskListResponse> Get()
 		{
 			var result = await _mediator.Send(new GetAllTasksCommand());
 
