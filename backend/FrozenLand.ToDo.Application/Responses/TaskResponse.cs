@@ -4,7 +4,7 @@ namespace FrozenLand.ToDo.Application.Responses
 {
 	public sealed record TaskListResponse(TaskItemResponse[] Pending, TaskItemResponse[] Completed);
 
-	public sealed record TaskItemResponse(string Id, DateTime CreationDate, bool Completed, string CreatedBy, string Description, DateTime CompletedDate);
+	public sealed record TaskItemResponse(string Id, DateTime CreationDate, bool Completed, string Description, DateTime CompletedDate);
 	
 	public static class TaskResponseMapping
 	{
@@ -14,7 +14,6 @@ namespace FrozenLand.ToDo.Application.Responses
 				task.Id,
 				task.CreationDate,
 				task.Completed,
-				task.CreatedBy,
 				task.Description,
 				task.CompleteDate);
 		}

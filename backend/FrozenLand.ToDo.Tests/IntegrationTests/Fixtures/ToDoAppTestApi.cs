@@ -17,7 +17,7 @@ namespace FrozenLand.ToDo.Tests.IntegrationTests.Fixtures
         {
             builder.ConfigureServices(services =>
             {
-                services.AddScoped<ITasksRepository, DummyTasksRepository>();
+                services.AddSingleton<ITasksRepository, DummyTasksRepository>();
             });
 
             return base.CreateHost(builder);

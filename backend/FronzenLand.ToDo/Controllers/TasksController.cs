@@ -1,3 +1,4 @@
+using FronzenLand.ToDo.Models;
 using FrozenLand.ToDo.Application;
 using FrozenLand.ToDo.Application.Responses;
 using MediatR;
@@ -20,13 +21,26 @@ namespace FronzenLand.ToDo.Controllers
 		}
 
 		[HttpGet]
-		public async Task<TaskListResponse> Get()
+		public async Task<ActionResult<TaskListResponse>> Get()
 		{
 			var result = await _mediator.Send(new GetAllTasksCommand());
 
 			if (result.IsSuccess) return result.Value;
 
-			throw new Exception("Can't get any tasks");
+			// Replace by an appropiate Http Code Status
+			return new BadRequestObjectResult(result.Error);
+		}
+
+		[HttpPost]
+		[Route("new-task")]
+		public async Task<ActionResult<TaskItemResponse>> AddNewTask(TaskRequest task)
+		{
+			var result = await _mediator.Send(task.ToCommand());
+
+			if (result.IsSuccess) return result.Value;
+
+			// Replace by an appropiate Http Code Status
+			return new BadRequestObjectResult(result.Error);
 		}
 	}
 }

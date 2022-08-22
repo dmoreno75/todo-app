@@ -9,16 +9,29 @@ namespace FrozenLand.ToDo.Infrastructure
 
 		public DummyTasksRepository()
 		{
-			_tasks.Add(new CoreModels.Task(Guid.NewGuid().ToString(), DateTime.Now, false, "me", "Lorem ipsum"));
-			_tasks.Add(new CoreModels.Task(Guid.NewGuid().ToString(), DateTime.Now, true, "me", "Lorem ipsum"));
-			_tasks.Add(new CoreModels.Task(Guid.NewGuid().ToString(), DateTime.Now, true, "me", "Lorem ipsum"));
-			_tasks.Add(new CoreModels.Task(Guid.NewGuid().ToString(), DateTime.Now, false, "me", "Lorem ipsum"));
+			_tasks.Add(new CoreModels.Task(Guid.NewGuid().ToString(), DateTime.Now, false, "Lorem ipsum"));
+			_tasks.Add(new CoreModels.Task(Guid.NewGuid().ToString(), DateTime.Now, true, "Lorem ipsum"));
+			_tasks.Add(new CoreModels.Task(Guid.NewGuid().ToString(), DateTime.Now, true, "Lorem ipsum"));
+			_tasks.Add(new CoreModels.Task(Guid.NewGuid().ToString(), DateTime.Now, false, "Lorem ipsum"));
 		}
 
 		public async Task<Result<IList<CoreModels.Task>>> GetAll()
 		{
 			var result = Result.Success(_tasks);
 			return await Task.FromResult(result);
+		}
+
+		public Task<Result<CoreModels.Task>> Save(string description)
+		{
+			var task = new CoreModels.Task(
+				Guid.NewGuid().ToString(),
+				DateTime.Now,
+				false,
+				description);
+
+			_tasks.Add(task);
+
+			return Task.FromResult(Result.Success(task));
 		}
 	}
 }

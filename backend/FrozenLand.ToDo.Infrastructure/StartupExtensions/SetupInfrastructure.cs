@@ -9,7 +9,7 @@ namespace FrozenLand.ToDo.Infrastructure
 	{
 		public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration, IHostEnvironment environment)
 		{
-			services.AddScoped<ITasksRepository, LocalTasksRepository>();
+			services.AddSingleton<ITasksRepository, LocalTasksRepository>();
 			return services;
 		}
 	}
