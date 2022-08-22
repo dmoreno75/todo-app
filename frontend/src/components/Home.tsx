@@ -1,9 +1,9 @@
 import TaskList from "./TaskList";
 import useFetch from "../hooks/useFetch";
-import { Task } from "../types/Task";
+import { TaskCategories } from "../types/Task";
 
 const Home = () => {
-  const { data, error } = useFetch<Task[]>('https://localhost:8000/tasks')
+  const { data, error } = useFetch<TaskCategories>('https://localhost:8000/tasks')
 
   return (
     <div className="home">

@@ -12,6 +12,11 @@ h2 {
 	@apply text-blue-primary font-black;
 }
 
+h3 {
+	font-size: 1.2em;
+	@apply text-blue-primary font-black;
+}
+
 ul {
 	@apply text-blue-primary font-bold;
 }
