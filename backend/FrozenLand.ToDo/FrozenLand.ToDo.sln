@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32811.315
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FronzenLand.ToDo", "FronzenLand.ToDo.csproj", "{C083ED62-3E5A-4A6C-9298-B688AC1A57E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FrozenLand.ToDo", "FrozenLand.ToDo.csproj", "{C083ED62-3E5A-4A6C-9298-B688AC1A57E4}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FrozenLand.ToDo.Application", "..\FrozenLand.ToDo.Application\FrozenLand.ToDo.Application.csproj", "{7B311C01-012A-4049-A335-CD4FF3656CB6}"
 EndProject

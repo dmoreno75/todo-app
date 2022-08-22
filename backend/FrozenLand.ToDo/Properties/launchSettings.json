@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "FronzenLand.ToDo": {
+    "FrozenLand.ToDo": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "swagger",

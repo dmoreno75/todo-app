@@ -1,11 +1,11 @@
-using FronzenLand.ToDo.Models;
+using FrozenLand.ToDo.Models;
 using FrozenLand.ToDo.Application;
 using FrozenLand.ToDo.Application.Responses;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 
-namespace FronzenLand.ToDo.Controllers
+namespace FrozenLand.ToDo.Controllers
 {
 	[ApiController]
 	[Route("[controller]")]

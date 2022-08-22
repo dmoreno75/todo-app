@@ -1,4 +1,4 @@
-using FronzenLand.ToDo.StartupExtensions;
+using FrozenLand.ToDo.StartupExtensions;
 using FrozenLand.ToDo.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);

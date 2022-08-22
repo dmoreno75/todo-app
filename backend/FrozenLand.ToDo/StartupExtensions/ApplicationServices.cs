@@ -1,7 +1,7 @@
 using FrozenLand.ToDo.Application;
 using MediatR;
 
-namespace FronzenLand.ToDo.StartupExtensions
+namespace FrozenLand.ToDo.StartupExtensions
 {
 	public static class ApplicationServices
 	{

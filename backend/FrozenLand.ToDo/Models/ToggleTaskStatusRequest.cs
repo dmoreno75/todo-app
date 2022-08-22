@@ -1,6 +1,6 @@
 using FrozenLand.ToDo.Application;
 
-namespace FronzenLand.ToDo.Models
+namespace FrozenLand.ToDo.Models
 {
 	public class ToggleTaskStatusRequest
 	{

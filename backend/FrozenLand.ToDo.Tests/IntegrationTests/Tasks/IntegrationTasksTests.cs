@@ -1,5 +1,5 @@
 using CSharpFunctionalExtensions.Json.Serialization;
-using FronzenLand.ToDo.Models;
+using FrozenLand.ToDo.Models;
 using FrozenLand.ToDo.Application.Responses;
 using FrozenLand.ToDo.Tests.IntegrationTests.Fixtures;
 using Microsoft.AspNetCore.Mvc;
