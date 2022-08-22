@@ -55,3 +55,7 @@ p {
 .menu-mobile ul .active {
 	@apply text-white bg-blue-primary rounded-full py-2;
 }
+
+button {
+  @apply bg-blue-primary text-white p-1 rounded
+}
